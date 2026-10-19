@@ -9,6 +9,9 @@ settings:
   SWIFT_VERSION: "5.0"
   TARGETED_DEVICE_FAMILY: "1,2"
   IPHONEOS_DEPLOYMENT_TARGET: "15.0"
+packages:
+  InricoB02PTTKit:
+    path: lib
 targets:
   InricoB02PTT:
     type: application
@@ -17,6 +20,10 @@ targets:
       - path: InricoB02PTT
         excludes:
           - "**/.DS_Store"
+          - "BLE/**"
+    dependencies:
+      - package: InricoB02PTTKit
+        product: InricoB02PTTKit
     settings:
       PRODUCT_BUNDLE_IDENTIFIER: ru.chepil.InricoB02PTT
       PRODUCT_NAME: InricoB02PTT

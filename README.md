@@ -1,11 +1,11 @@
 # Inrico B02PTT-FF01 — iOS BLE PTT reference
 
-Single-screen demo app for integrating the **Inrico BT02 / B02PTT-FF01** PTT button into any iOS PTT application.
+Single-screen **demo app** that integrates the **Inrico B02 / B02PTT-FF01** PTT button by depending on the local Swift package in [`lib/`](lib/) (`InricoB02PTTKit`).
 
-**For third-party app developers**, use the UI-free package:  
-→ [`lib/`](lib/) (`InricoB02PTTKit` + integration guide).
+**For third-party app developers**, copy or add that package — not the demo UI:  
+→ [`lib/README.md`](lib/README.md)
 
-Verified in practice: Zello on iPhone lists the device as a **Bluetooth Low Energy button** and accepts press/hold. This project does the same via **CoreBluetooth**.
+Verified in practice: Zello on iPhone lists the device as a **Bluetooth Low Energy button** and accepts press/hold. The kit does the same via **CoreBluetooth**.
 
 ## Hardware
 
@@ -19,42 +19,56 @@ Verified in practice: Zello on iPhone lists the device as a **Bluetooth Low Ener
 Notes:
 
 - **B02** supports **iOS and Android**; **B01** is primarily Android.
-- Profiles include HFP, A2DP, SPP, and BLE (PTT button path used by this project).
+- Profiles include HFP, A2DP, SPP, and BLE (PTT button path used by the kit).
 - Marketplace listings (Amazon, AliExpress, etc.) often mix B01/B02 names — prefer the official page and the BLE name `B02PTT-FF01` for identification.
 
 ## License
 
 [MIT](LICENSE) — free to use in closed-source host apps; keep the copyright notice.
 
-## Features
+## Layout
+
+```
+InricoB02PTT-FF01/
+  lib/                    ← InricoB02PTTKit (integrate this)
+  InricoB02PTT/           ← demo host UI (example consumer)
+  InricoB02PTT.xcodeproj  ← links the local package from lib/
+```
+
+The Xcode app target depends on the package via `project.yml` (`packages.path: lib`). BLE scan/connect/PTT lives only in the kit; the app adds SwiftUI, haptic/sound, and logging.
+
+## Demo app features
 
 1. Foreground operation
 2. Background operation (`UIBackgroundModes` → `bluetooth-central` + state restoration)
-3. BLE button discovery and connection by name `B02PTT*` / `BT02PTT*`
-4. Visual PTT DOWN / UP indication + optional sound and haptic feedback
+3. Calls `InricoB02PTTClient.start()` / `connect()` / `disconnect()`
+4. Visual PTT DOWN / UP + optional sound and haptic
 
-Headset audio (speaker / microphone) uses system **Classic Bluetooth (HFP/A2DP)** after pairing in Settings. This app handles **BLE PTT button events only**.
+Headset audio uses system **HFP/A2DP** after pairing in Settings. The kit handles **BLE PTT events only**.
 
-## Architecture (for embedding)
+## Architecture (this repo as an example)
 
 | File | Role |
 |------|------|
-| `BLE/B02PTTBleController.swift` | Central: scan, connect, restore, reconnect, notify |
-| `BLE/B02PTTProtocol.swift` | Device name, Coda / FFE UUIDs, payload parser |
-| `BLE/PTTFeedback.swift` | Sound / haptic (optional) |
-| `ContentView.swift` | Demo UI |
+| `lib/…/InricoB02PTTClient.swift` | Production BLE client (use in your app) |
+| `lib/…/B02PTTProtocol.swift` | Device name, Coda UUIDs, payload parser |
+| `InricoB02PTT/DemoPTTSession.swift` | Thin SwiftUI bridge + delegate → kit |
+| `InricoB02PTT/ContentView.swift` | Demo UI |
+| `InricoB02PTT/PTTFeedback.swift` | Demo-only sound / haptic |
 
-Minimal integration into another app (prefer the `lib` package instead):
+Host integration (same as the demo, without UI):
 
 ```swift
-let ble = B02PTTBleController()
-ble.onPttChanged = { isPressed in
+import InricoB02PTTKit
+
+let client = InricoB02PTTClient()
+client.onPttChanged = { isPressed in
     if isPressed { startTransmit() } else { stopTransmit() }
 }
-ble.start()
+client.start()
 ```
 
-Copy the `BLE/` folder and the keys from `Info.plist` (`NSBluetoothAlwaysUsageDescription`, `UIBackgroundModes`).
+See [`lib/README.md`](lib/README.md) for Info.plist keys and package setup.
 
 ## BLE protocol (verified on device)
 
@@ -72,28 +86,18 @@ PTT UP   — 894C8042-E841-461C-A5C9-5A73D25DB08E [00]
 
 Fallback: HM-10 style `FFE0` / `FFE1`, and ASCII `+PTT=P` / `+PTT=R` if a UART notify path is used.
 
-The controller:
-
-1. Scans by **name** (`B02PTT…`)
-2. Prefers the Coda notify characteristic, then other Notify characteristics
-3. Also parses ASCII `+PTT=P` / `+PTT=R` and `TALK,1` / `TALK,0` when present
-
-The screen shows the characteristic UUID and hex payload — useful to compare with nRF Connect.
-
 > On Android, HyTalkPTT also supports Classic **SPP** (`+PTT=P` / `+PTT=R`) for this model. On iOS, SPP is not available to third-party apps; use **BLE** for the button, as Zello does.
 
 ## Running
 
-1. Open `InricoB02PTT.xcodeproj` in Xcode
+1. Open `InricoB02PTT.xcodeproj` in Xcode (resolves local package `lib/`)
 2. Select your Development Team (Signing)
 3. Install on a **physical iPhone** (BLE simulator is useless)
 4. Pair the Inrico in **Settings → Bluetooth** (for audio)
 5. Run the app → allow Bluetooth → **Scan / Connect**
 6. Hold PTT on the headset — the indicator turns red (**PTT DOWN**)
 
-Background: leave the app and press PTT again — iOS may wake the central; for continuous background use, keep the BLE session active (as in the demo).
-
-Regenerate the Xcode project from `project.yml` (after changing the file tree):
+Regenerate the Xcode project after changing sources / `project.yml`:
 
 ```bash
 xcodegen generate
@@ -108,9 +112,7 @@ xcodegen generate
 
 ## Handing off to a developer
 
-Prefer shipping only [`lib/`](lib/). If you ship the whole repo, the key contract is:
+Ship [`lib/`](lib/) (or point them at this repo and the package). Contract:
 
-- `isPttPressed` / `onPttChanged(Bool)` — the only API a walkie-talkie host needs
+- `InricoB02PTTClient` → `onPttChanged` / `InricoB02PTTClientDelegate`
 - HFP audio session is configured by the host (`AVAudioSession` playAndRecord + Bluetooth HFP)
-
-If a firmware uses a different payload, adjust `B02PTTProtocol.parsePttState` using the on-screen log or nRF Connect.

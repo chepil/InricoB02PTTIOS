@@ -2,14 +2,14 @@ import SwiftUI
 
 @main
 struct InricoB02PTTApp: App {
-    @StateObject private var ble = B02PTTBleController()
+    @StateObject private var session = DemoPTTSession()
 
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environmentObject(ble)
+                .environmentObject(session)
                 .onAppear {
-                    ble.start()
+                    session.start()
                 }
         }
     }

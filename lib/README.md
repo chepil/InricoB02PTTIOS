@@ -181,5 +181,7 @@ lib/
     B02PTTProtocol.swift             ← UUIDs / parser
 ```
 
-A reference demo with UI and logging lives next to this folder:  
-`../InricoB02PTT` (app at the repository root). For production integration, use **only** this package.
+A reference **demo host** that depends on this local package lives at the repository root  
+(`InricoB02PTT` app + `DemoPTTSession.swift`). Open `InricoB02PTT.xcodeproj` to see a working consumer.
+
+For production integration, use **only** this package — not the demo UI.
