@@ -7,6 +7,25 @@ Single-screen demo app for integrating the **Inrico BT02 / B02PTT-FF01** PTT but
 
 Verified in practice: Zello on iPhone lists the device as a **Bluetooth Low Energy button** and accepts press/hold. This project does the same via **CoreBluetooth**.
 
+## Hardware
+
+**Inrico B02** Bluetooth remote speaker microphone (RSM). On iOS / BLE it typically appears as **`B02PTT-FF01`**.
+
+| | |
+|--|--|
+| Official product page | [B01 & B02 — inricosolutions.com](https://www.inricosolutions.com/products/B01-B02.html) |
+| Manufacturer brochure (PDF) | [B01/B02 brochure](https://www.inricosolutions.com/file/upload/2026-07/16/202607160952056521.pdf) |
+
+Notes:
+
+- **B02** supports **iOS and Android**; **B01** is primarily Android.
+- Profiles include HFP, A2DP, SPP, and BLE (PTT button path used by this project).
+- Marketplace listings (Amazon, AliExpress, etc.) often mix B01/B02 names — prefer the official page and the BLE name `B02PTT-FF01` for identification.
+
+## License
+
+[MIT](LICENSE) — free to use in closed-source host apps; keep the copyright notice.
+
 ## Features
 
 1. Foreground operation

@@ -5,6 +5,25 @@ Swift package for the **Inrico B02PTT-FF01** (Inrico BT02) PTT button on iOS.
 Library only: no UI, no test screen, no sound feedback.  
 Intended to be handed to a third-party PTT app developer.
 
+## Hardware
+
+**Inrico B02** Bluetooth remote speaker microphone (RSM). On iOS / BLE it typically appears as **`B02PTT-FF01`**.
+
+| | |
+|--|--|
+| Official product page | [B01 & B02 — inricosolutions.com](https://www.inricosolutions.com/products/B01-B02.html) |
+| Manufacturer brochure (PDF) | [B01/B02 brochure](https://www.inricosolutions.com/file/upload/2026-07/16/202607160952056521.pdf) |
+
+Notes:
+
+- **B02** supports **iOS and Android**; **B01** is primarily Android.
+- Profiles include HFP, A2DP, SPP, and BLE (this package uses the BLE PTT path).
+- Marketplace listings (Amazon, AliExpress, etc.) often mix B01/B02 names — prefer the official page and the BLE name `B02PTT-FF01` for identification.
+
+## License
+
+[MIT](../LICENSE) — free to use in closed-source host apps; keep the copyright notice.
+
 ## What the package does
 
 | | |
