@@ -1,0 +1,31 @@
+name: InricoB02PTT
+options:
+  bundleIdPrefix: ru.chepil
+  deploymentTarget:
+    iOS: "15.0"
+  createIntermediateGroups: true
+  developmentLanguage: en
+settings:
+  SWIFT_VERSION: "5.0"
+  TARGETED_DEVICE_FAMILY: "1,2"
+  IPHONEOS_DEPLOYMENT_TARGET: "15.0"
+targets:
+  InricoB02PTT:
+    type: application
+    platform: iOS
+    sources:
+      - path: InricoB02PTT
+        excludes:
+          - "**/.DS_Store"
+    settings:
+      PRODUCT_BUNDLE_IDENTIFIER: ru.chepil.InricoB02PTT
+      PRODUCT_NAME: InricoB02PTT
+      INFOPLIST_FILE: InricoB02PTT/Info.plist
+      CODE_SIGN_STYLE: Automatic
+      CURRENT_PROJECT_VERSION: 1
+      MARKETING_VERSION: "1.0.0"
+      GENERATE_INFOPLIST_FILE: false
+      TARGETED_DEVICE_FAMILY: "1,2"
+      SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD: false
+    entitlements:
+      path: InricoB02PTT/InricoB02PTT.entitlements

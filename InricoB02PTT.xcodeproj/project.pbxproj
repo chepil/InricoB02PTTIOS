@@ -1,0 +1,346 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		115CA0753EDA6395807F6111 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73C17DC46DFA69EBFE8D337 /* ContentView.swift */; };
+		179741DEF46B72904BDFCD96 /* BleLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05820EC65ED13598FE4DDE20 /* BleLog.swift */; };
+		380D010062B5C02C1CEE4562 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 494D740EF4350E0795578152 /* Assets.xcassets */; };
+		56C3BC0B8AADE6F4AFA2E426 /* B02PTTProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E51B98D0531BC3037C2AC8A /* B02PTTProtocol.swift */; };
+		7246B8023BDA5AC2D9B9AE90 /* PTTFeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FB53D893445CEBC2077861 /* PTTFeedback.swift */; };
+		B3AB552A81904ECE6C177C49 /* InricoB02PTTApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D4EC8E8874DD894329EBC8 /* InricoB02PTTApp.swift */; };
+		F533F92E84C4A3046E651F80 /* B02PTTBleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C254B0CA0588CBACCCEE4E /* B02PTTBleController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		05820EC65ED13598FE4DDE20 /* BleLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BleLog.swift; sourceTree = "<group>"; };
+		2AC7BEF04DEF2AD7F93BEC68 /* InricoB02PTT.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = InricoB02PTT.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		336CB2F1CF9CC04621AEA10A /* InricoB02PTT.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = InricoB02PTT.entitlements; sourceTree = "<group>"; };
+		3E51B98D0531BC3037C2AC8A /* B02PTTProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = B02PTTProtocol.swift; sourceTree = "<group>"; };
+		494D740EF4350E0795578152 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		56C1B676E21BE46607609DF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		62C254B0CA0588CBACCCEE4E /* B02PTTBleController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = B02PTTBleController.swift; sourceTree = "<group>"; };
+		96D4EC8E8874DD894329EBC8 /* InricoB02PTTApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InricoB02PTTApp.swift; sourceTree = "<group>"; };
+		A7FB53D893445CEBC2077861 /* PTTFeedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTTFeedback.swift; sourceTree = "<group>"; };
+		C73C17DC46DFA69EBFE8D337 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		54111E6DE56AAF2E54CBFEF9 = {
+			isa = PBXGroup;
+			children = (
+				81603E968C4507810C2528CF /* InricoB02PTT */,
+				784F5661633A23B6E6EF78EA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		784F5661633A23B6E6EF78EA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2AC7BEF04DEF2AD7F93BEC68 /* InricoB02PTT.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		81603E968C4507810C2528CF /* InricoB02PTT */ = {
+			isa = PBXGroup;
+			children = (
+				494D740EF4350E0795578152 /* Assets.xcassets */,
+				C73C17DC46DFA69EBFE8D337 /* ContentView.swift */,
+				56C1B676E21BE46607609DF6 /* Info.plist */,
+				336CB2F1CF9CC04621AEA10A /* InricoB02PTT.entitlements */,
+				96D4EC8E8874DD894329EBC8 /* InricoB02PTTApp.swift */,
+				B6AD6385ADBEC7EF1C29D93A /* BLE */,
+			);
+			path = InricoB02PTT;
+			sourceTree = "<group>";
+		};
+		B6AD6385ADBEC7EF1C29D93A /* BLE */ = {
+			isa = PBXGroup;
+			children = (
+				62C254B0CA0588CBACCCEE4E /* B02PTTBleController.swift */,
+				3E51B98D0531BC3037C2AC8A /* B02PTTProtocol.swift */,
+				05820EC65ED13598FE4DDE20 /* BleLog.swift */,
+				A7FB53D893445CEBC2077861 /* PTTFeedback.swift */,
+			);
+			path = BLE;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		73F82847A4C583F350D5D1B1 /* InricoB02PTT */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C9E1FBC2F55F966140560B17 /* Build configuration list for PBXNativeTarget "InricoB02PTT" */;
+			buildPhases = (
+				E44168C97CE4F1C1892EB51D /* Sources */,
+				5E913F097BFEC715F25E9BE0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = InricoB02PTT;
+			packageProductDependencies = (
+			);
+			productName = InricoB02PTT;
+			productReference = 2AC7BEF04DEF2AD7F93BEC68 /* InricoB02PTT.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C48AB5244D65C7FBD602537A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					73F82847A4C583F350D5D1B1 = {
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 8867E146762290DDDA0F5EBE /* Build configuration list for PBXProject "InricoB02PTT" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 54111E6DE56AAF2E54CBFEF9;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 784F5661633A23B6E6EF78EA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				73F82847A4C583F350D5D1B1 /* InricoB02PTT */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5E913F097BFEC715F25E9BE0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				380D010062B5C02C1CEE4562 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E44168C97CE4F1C1892EB51D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F533F92E84C4A3046E651F80 /* B02PTTBleController.swift in Sources */,
+				56C3BC0B8AADE6F4AFA2E426 /* B02PTTProtocol.swift in Sources */,
+				179741DEF46B72904BDFCD96 /* BleLog.swift in Sources */,
+				115CA0753EDA6395807F6111 /* ContentView.swift in Sources */,
+				B3AB552A81904ECE6C177C49 /* InricoB02PTTApp.swift in Sources */,
+				7246B8023BDA5AC2D9B9AE90 /* PTTFeedback.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		020A202B4902B280E150A3AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		92FF764B92E98C5F11B166B8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		B485E1070EA632828964476F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = InricoB02PTT/InricoB02PTT.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = InricoB02PTT/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.chepil.InricoB02PTT;
+				PRODUCT_NAME = InricoB02PTT;
+				SDKROOT = iphoneos;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FD516B65E480A22468963CC4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = InricoB02PTT/InricoB02PTT.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = InricoB02PTT/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.chepil.InricoB02PTT;
+				PRODUCT_NAME = InricoB02PTT;
+				SDKROOT = iphoneos;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8867E146762290DDDA0F5EBE /* Build configuration list for PBXProject "InricoB02PTT" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				020A202B4902B280E150A3AD /* Debug */,
+				92FF764B92E98C5F11B166B8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		C9E1FBC2F55F966140560B17 /* Build configuration list for PBXNativeTarget "InricoB02PTT" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B485E1070EA632828964476F /* Debug */,
+				FD516B65E480A22468963CC4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C48AB5244D65C7FBD602537A /* Project object */;
+}
